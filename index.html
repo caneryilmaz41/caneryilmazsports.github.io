@@ -7,14 +7,31 @@
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <style>
     .logo{
+      height: 150px;
+      
+    }
+    .custom-navbar-color {
+    background-color: transparent; /* Örnek bir renk kodu, istediğiniz rengi buraya yazabilirsiniz */
+  }
+    .navbar {
     
-    height: 5px;;
+      height: 150px;;
+      display: flex;
+      justify-content: center;
+    }
+    .navbar-brand {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
     }
     body {
       font-family: 'Roboto', sans-serif;
-      background-image: url(images/back.jpg);
+      background-image: url(images/5572419.jpg);
       background-size: cover;
       color: #fff;
+      background-color: rgba(0, 0, 0, 0.5)
+    
+      
     }
     .channel-buttons {
       margin-bottom: 20px;
@@ -28,13 +45,18 @@
       color: black;
       cursor: pointer;
       font-family: 'Roboto', sans-serif;
-      transition: all 0.3s ease; /* Hareket için geçiş efekti */
+      transition: all 0.3s ease;
     }
     .channel-button:hover {
-      background-color: grey; /* Buton hover efekti */
+      background-color: rgb(7, 169, 224);
     }
+    .channel-button img {
+  margin-right: 5px; /* Logo ile metin arasına boşluk eklemek için */
+  max-width: 120px; /* Logoların maksimum genişliğini ayarlamak için */
+  height: 20px; /* Genişlik oranına göre otomatik olarak boyutlandırma yapmak için */
+}
     .channel-button.active {
-      background-color:red; /* Seçili kanal buton rengi */
+      background-color:rgb(99, 63, 183);
     }
     .video-container {
       position: relative;
@@ -55,25 +77,37 @@
       margin-bottom: 0;
     }
   </style>
+   <link rel="shortcut icon" type="image/x-icon" href="images/logocum.png">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="jumbotron text-center">
-    
-    <h1 class="display-4">CANER YILMAZ SPORTS</h1>
-    <p class="lead">2023 yılında kurulan bu web sitesi CANER YILMAZ SPORTS, sizlerin en iyi şekilde canlı maç izlemesi için geliştirilmiştir.</p>
-  </div>
+  <!-- YENİ HEADER BÖLÜMÜ -->
+  <nav class="navbar navbar-expand-lg navbar-dark custom-navbar-color">
+    <div class="container">
+      <!-- LOGO EKLEME -->
+      <a class="navbar-brand" href="#">
+        <img src="images/logocum.png"  alt="Your Logo" class="logo">
+      </a>
+    </div>
+  </nav>
+  <!-- YENİ HEADER BÖLÜMÜ SONU -->
+
+  <!-- <div class="jumbotron text-center">
+    <!-- <h1 class="display-4">CANER YILMAZ SPORTS</h1>
+    <p class="lead">2023 yılında kurulan bu web sitesi CANER YILMAZ SPORTS, sizlerin en iyi şekilde canlı maç izlemesi için geliştirilmiştir.</p> -->
+  </div> -->
   <div class="container mt-4">
     <div class="row">
       <div class="col-md-12 text-center">
         <div class="channel-buttons">
-          <button class="channel-button" onclick="changeChannel('player.livepush.io/emvX0qxIoDmWD')">Bein Sports 1</button>
-          <button class="channel-button" onclick="changeChannel('player.livepush.io/emvv82gi0dB3j')">Exxen</button>
+          <button class="channel-button" onclick="changeChannel('player.livepush.io/emvX0qxIoDmWD')"><img src="images/b1.png"></button>
+          
           <!-- Add other channel buttons here -->
-          <button class="channel-button" onclick="changeChannel('player.livepush.io/emvpEWx8FLRDU')">Bein Sports 2</button>
-          <button class="channel-button" onclick="changeChannel('player.livepush.io/emvYXjDS4Kfbz')">Bein Sports 3</button>
-          <button class="channel-button" onclick="changeChannel('player.livepush.io/emvE6TLbFMNzf')">S Sport 1</button>
-          <button class="channel-button" onclick="changeChannel('player.livepush.io/emvUe1zHNfTeG')">Tivibu Spor 1</button>
+          <button class="channel-button" onclick="changeChannel('player.livepush.io/emvpEWx8FLRDU')"><img src="images/b2.png"></button>
+          <button class="channel-button" onclick="changeChannel('player.livepush.io/emvYXjDS4Kfbz')"><img src="images/b3.png"></button>
+          <button class="channel-button" onclick="changeChannel('player.livepush.io/emvv82gi0dB3j')"><img src="images/exxen.png"></button>
+          <button class="channel-button" onclick="changeChannel('player.livepush.io/emvE6TLbFMNzf')"><img src="images/ssport.png"></button>
+          <button class="channel-button" onclick="changeChannel('player.livepush.io/emvUe1zHNfTeG')"><img src="images/tvbu.png"></button>
         </div>
         <div class="video-container">
           <iframe id="videoPlayer" src="https://player.livepush.io/emvX0qxIoDmWD" frameborder="0" allowfullscreen></iframe>
